@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jonabasque/learn-component/issues"
   },
-  "homepage": "https://github.com/jonabasque/learn-component#readme"
+  "homepage": "https://github.com/jonabasque/learn-component#readme",
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
 }
