@@ -13,6 +13,17 @@
         <br />
         <greet-time classes="time" name="Joar"></greet-time>
 
+
+        <hr>
+        <section ng-controller="ParentController">
+            <!--TOKNOW: Entender cuando hay que ejecutar expresion o no -->
+            <!--La diferencia es que no es lo mismo pasarle el valor de una variable del $scope que querer pasarle una referencia (variable) -->
+            <greet-time-bind greeting="ownGreeting" name="Joar" classes="class"></greet-time-bind>
+            <button type="button" name="button" ng-click="minHour()">-</button>
+            <input type="text" name="" value="{{hour}}">
+            <button type="button" name="button" ng-click="sumHour()">+</button>
+        </section>
+
         <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
         <script type="text/javascript" src="./lib/modules/due-binding.js"></script>
         <script type="text/javascript" src="./lib/modules/one-binding.js"></script>
