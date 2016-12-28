@@ -1,0 +1,10 @@
+<input type="text" value="Elige tu opción" ng-model="$ctrl.select" />
+{{$ctrl.last}}
+<ul>
+    <li ng-if="$ctrl.select !== ''">Si hay algo en select</li>
+    <li ng-repeat="entity in $ctrl.parliament.entities">
+        <input type="checkbox" name="" value="" ng-if="$ctrl.last.name !== entity.name" ng-click="$ctrl.vote(entity.name)" />
+        <button type="button" name="button" ng-if="$ctrl.last.name === entity.name">V</button>
+        {{entity.name}}: {{entity.points}} votos.
+    </li>
+</ul>

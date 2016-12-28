@@ -15,18 +15,30 @@
 
 
         <hr>
-        <section ng-controller="ParentController as pc">
+        <section ng-controller="GreetingsController as gc">
             <!--TOKNOW: Entender cuando hay que ejecutar expresion o no -->
             <!--La diferencia es que no es lo mismo pasarle el valor de una variable del $scope que querer pasarle una referencia (variable) -->
             Parent: <br />
-            - greeting:{{pc.parentGreeting}} <br />
-            - class: {{pc.class}} <br />
-            <button type="button" name="button" ng-click="pc.minHour()">-</button>
-            <input type="text" name="" value="{{pc.hour}}">
-            <button type="button" name="button" ng-click="pc.sumHour()">+</button>
+            - greeting:{{gc.parentGreeting}} <br />
+            - class: {{gc.class}} <br />
+            <button type="button" name="button" ng-click="gc.minHour()">-</button>
+            <input type="text" name="" value="{{gc.hour}}">
+            <button type="button" name="button" ng-click="gc.sumHour()">+</button>
             <br />
             Child:
-            <greet-time-bind greeting="pc.parentGreeting" name="Joar" classes="pc.class"></greet-time-bind>
+            <greet-time-bind greeting="gc.parentGreeting" name="Joar" classes="gc.class"></greet-time-bind>
+        </section>
+
+        <hr>
+        <section ng-controller="ParliamentController as pc">
+            Parent: <br />
+            - lastVote: {{pc.lastVote}} <br />
+            <ul>
+                <li ng-repeat="entity in pc.parliament.entities">{{entity.name}}: {{entity.points}} votos</li>
+            </ul>
+            <br />
+            Child:<br />
+            <parliament-chart parliament="pc.parliament" last="pc.lastVote" ></parliament-chart>
         </section>
 
         <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
