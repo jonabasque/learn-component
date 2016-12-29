@@ -44,13 +44,12 @@
         <hr>
         <section ng-controller="EntityNewController as enc">
             Parent: <br />
-            - newEntity: {{enc.newEntity}}
             <ul>
-                <li ng-repeat="entity in enc.parliament.entities">{{entity.name}}: {{entity.select}}</li>
+                <li ng-repeat="entity in enc.parliament.entities">{{entity.name}}</li>
             </ul>
             <br />
             Child:<br />
-            <parliament-add entity="enc.newEntity" on-add-entity="enc.addEntity($event)"></parliament-add>
+            <parliament-add on-add-entity="enc.addEntity($event)"></parliament-add>
         </section>
 
 
