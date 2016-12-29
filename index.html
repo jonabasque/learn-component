@@ -41,6 +41,19 @@
             <parliament-chart parliament="pc.parliament" last="pc.lastVote" ></parliament-chart>
         </section>
 
+        <hr>
+        <section ng-controller="EntityNewController as enc">
+            Parent: <br />
+            - newEntity: {{enc.newEntity}}
+            <ul>
+                <li ng-repeat="entity in enc.parliament.entities">{{entity.name}}: {{entity.select}}</li>
+            </ul>
+            <br />
+            Child:<br />
+            <parliament-add entity="enc.newEntity" on-add-entity="enc.addEntity()"></parliament-add>
+        </section>
+
+
         <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
         <script type="text/javascript" src="./lib/modules/due-binding.js"></script>
         <script type="text/javascript" src="./lib/modules/one-binding.js"></script>
